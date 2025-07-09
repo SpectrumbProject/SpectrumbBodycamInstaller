@@ -1,9 +1,9 @@
- bzyj0k-codex/build-python-gui-installer-for-bonelab-mod
 from gui import run_app
 
 
 if __name__ == "__main__":
     run_app()
+
 
 import os
 import shutil
@@ -147,4 +147,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-development-v1.0
+

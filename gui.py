@@ -1,3 +1,4 @@
+
 import tkinter as tk
 from tkinter import filedialog, scrolledtext, messagebox
 
@@ -12,7 +13,7 @@ from utils import install_mod
 
 
 class InstallerApp:
-    def __init__(self, root: tk.Tk | "ctk.CTk"):
+
         self.root = root
         if USE_CUSTOM:
             ctk.set_appearance_mode("dark")
