@@ -54,30 +54,4 @@ def install_mod(
             if os.path.exists(src):
                 dest = os.path.join(backup_dir, item)
                 try:
-                    if os.path.isdir(dest):
-                        shutil.rmtree(dest)
-                    elif os.path.isfile(dest):
-                        os.remove(dest)
-                except Exception:
-                    pass
-                try:
-                    shutil.move(src, dest)
-                    log(f"Backed up {item}")
-                except Exception as exc:
-                    log(f"Failed to backup {item}: {exc}")
 
-    for idx, item in enumerate(ITEMS, start=1):
-        src = os.path.join(files_dir, item)
-        dest = os.path.join(target_dir, item)
-        try:
-            if os.path.isdir(src):
-                shutil.copytree(src, dest, dirs_exist_ok=True)
-            else:
-                shutil.copy2(src, dest)
-            log(f"Copied {item}")
-        except Exception as exc:
-            log(f"Failed to copy {item}: {exc}")
-        progress(idx * step)
-
-    # ensure the bar reaches 100%
-    progress(1)
